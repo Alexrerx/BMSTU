@@ -43,11 +43,11 @@ public class Record {
     }
 
     public void readStart() {
-        try {
-            writer =  new PrintWriter(main.fileDebug);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            writer =  new PrintWriter(main.fileDebug);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
         isReading = true;
         new Thread(new Runnable() {
             @Override
@@ -67,21 +67,25 @@ public class Record {
                         public void  run() {
                             for (int i = 0; i < myBuffer.length; i++) {
                                 main.txt.setText(i + 1 + " " + myBuffer[i] + "\n");
+                                Log.e(TAG,Integer.toString(i)+":"+myBuffer[i]);
+                                }
 
-                                writer.print(i + 1 + " " + myBuffer[i] + "\n");
+//                                writer.print(i + 1 + " " + myBuffer[i] + "\n");
 
-                            }
+
                         }
                     });
 
-                } writer.close();
+                }
+//                writer.close();
             }
         }).start();
-
+        Log.e(TAG,"readStart");
     }
 
     public void readStop() {
         isReading = false;
+        Log.e(TAG,"readStop");
     }
 
     public class OnClickListener implements View.OnClickListener {

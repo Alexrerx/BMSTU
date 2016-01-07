@@ -76,13 +76,16 @@ public class MainActivity extends AppCompatActivity {
         /*************DEBUG****************/
         File dirDebug = new File(PATHDEBUG);
         dirDebug.mkdirs();
-        File f = new File(fileDebug);
 
-        try {
-            f.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+//        File file = new File(fileDebug);
+
+//        try {
+//            file.createNewFile();
+//            Log.d("Debug","OK");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         /**********************************/
 
