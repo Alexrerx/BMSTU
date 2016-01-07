@@ -24,7 +24,7 @@ public class Record {
     private MediaRecorder mediaRecorder;
     private MediaPlayer mediaPlayer;
     private AudioRecord audioRecord;
-    boolean isReading = false;
+    public boolean isReading = false;
     int myBufferSize = 8192;
     byte[] myBuffer = new byte[myBufferSize];
     MainActivity main;

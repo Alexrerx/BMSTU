@@ -18,7 +18,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
-
     /*Константы*/
     TextView txt;
     public static final String FILE_FOLDER = "records";
@@ -122,5 +121,10 @@ public class MainActivity extends AppCompatActivity {
 //        Record record = new Record();
 //        record.releasePlayer();
 //        record.releaseRecorder();
+        Record record = new Record(this);
+        record.isReading = false;
+        if (audioRecord != null) {
+            audioRecord.release();
+        }
     }
 }
