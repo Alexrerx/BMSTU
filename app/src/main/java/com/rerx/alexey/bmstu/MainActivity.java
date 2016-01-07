@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     /*------------------------------*/
     private String fileName;
     /*****************DEBUG*******************/
+
     String fileDebug;
     public static final String FILE_DEBUG_FOLDER = "debug";
     public static final String PATHDEBUG = android.os.Environment

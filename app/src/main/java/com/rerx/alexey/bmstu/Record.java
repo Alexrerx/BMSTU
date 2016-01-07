@@ -7,6 +7,7 @@ import android.content.Context;
 import android.media.AudioRecord;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.util.Log;
 import android.view.View;
 
 import java.io.File;
@@ -17,6 +18,7 @@ import java.io.PrintWriter;
  * Created by alexey on 05.01.16.
  */
 public class Record {
+    final String TAG = "Debug";
     PrintWriter writer;
     //всё для записи
     private MediaRecorder mediaRecorder;
@@ -31,12 +33,12 @@ public class Record {
         main = (MainActivity) context;
     }
 
-    public void recordStart(View v) {
+    public void recordStart() {
         audioRecord.startRecording();
         int recordingState = audioRecord.getRecordingState();
     }
 
-    public void recordStop(View v) {
+    public void recordStop() {
         audioRecord.stop();
     }
 
@@ -94,6 +96,10 @@ public class Record {
                     break;
             }
         }
+    }
+    public void readStop(View v) {
+        Log.d(TAG, "read stop");
+        isReading = false;
     }
 
 
